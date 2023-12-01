@@ -24,7 +24,7 @@ export const AppBar: FC = props => {
           </label>
 
           <div className="hidden sm:inline w-22 h-22 md:p-2">
-            <img src="./sol.png" className="w-16 h16" alt="logo"  />
+            <img src="./sol.png" className="w-32" alt="logo"  />
           </div>
         </div>
 
@@ -40,10 +40,10 @@ export const AppBar: FC = props => {
             <Link href="/explorer">
               <a className="btn btn-ghost btn-sm rounded-btn">Explorer</a>
             </Link>
-            <Link href="/">
+            <Link href="https://t.me/solscanorg">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
-            <Link href="/">
+            <Link href="https://twitter.com/SolScanv2">
               <a className="btn btn-ghost btn-sm rounded-btn">Twitter</a>
             </Link>
             

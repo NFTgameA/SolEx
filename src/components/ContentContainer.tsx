@@ -27,6 +27,16 @@ export const ContentContainer: FC = props => {
               <a>Explorer</a>
             </Link>
           </li>
+          <li>
+            <Link href="https://t.me/solscanorg">
+              <a>Telegram</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://twitter.com/SolScanv2">
+              <a>Twitter</a>
+            </Link>
+          </li>
 
           
        
