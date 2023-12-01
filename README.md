@@ -3,13 +3,13 @@ Rename `.env.example` to `.env`. Delete the comments.
 Set `REACT_APP_SOLANA_RPC_HOST`to your QuickNode endpoint URL.
 Set `REACT_APP_NETWORK` to the corresponding Solana network (`devnet`, `mainnet-beta`, `testnet`)
 
-# Solana dApp Scaffold Next
+# Solana dApp SolScan Next
 
-The Solana dApp Scaffold repos are meant to house good starting scaffolds for ecosystem developers to get up and running quickly with a front end client UI that integrates several common features found in dApps with some basic usage examples. Wallet Integration. State management. Components examples. Notifications. Setup recommendations.
+The Solana dApp SolScan repos are meant to house good starting SolScans for ecosystem developers to get up and running quickly with a front end client UI that integrates several common features found in dApps with some basic usage examples. Wallet Integration. State management. Components examples. Notifications. Setup recommendations.
 
 Responsive                     |  Desktop
 :-------------------------:|:-------------------------:
-![](scaffold-mobile.png)  |  ![](scaffold-desktop.png)
+![](SolScan-mobile.png)  |  ![](SolScan-desktop.png)
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Features
 
-Each Scaffold will contain at least the following features:
+Each SolScan will contain at least the following features:
 
 ```
 Wallet Integration with Auto Connec / Refresh
@@ -69,7 +69,7 @@ A Solana Components Repo will be released in the near future to house a common c
 
 ### Structure
 
-The scaffold project structure may vary based on the front end framework being utilized. The below is an example structure for the Next js Scaffold.
+The SolScan project structure may vary based on the front end framework being utilized. The below is an example structure for the Next js SolScan.
  
 ```
 ├── public : publically hosted files
@@ -89,9 +89,9 @@ style, package, configuration, and other project files
 
 ## Contributing
 
-Anyone is welcome to create an issue to build, discuss or request a new feature or update to the existing code base. Please keep in mind the following when submitting an issue. We consider merging high value features that may be utilized by the majority of scaffold users. If this is not a common feature or fix, consider adding it to the component library or cookbook. Please refer to the project's architecture and style when contributing. 
+Anyone is welcome to create an issue to build, discuss or request a new feature or update to the existing code base. Please keep in mind the following when submitting an issue. We consider merging high value features that may be utilized by the majority of SolScan users. If this is not a common feature or fix, consider adding it to the component library or cookbook. Please refer to the project's architecture and style when contributing. 
 
-If submitting a feature, please reference the project structure shown above and try to follow the overall architecture and style presented in the existing scaffold.
+If submitting a feature, please reference the project structure shown above and try to follow the overall architecture and style presented in the existing SolScan.
 
 ### Committing
 
