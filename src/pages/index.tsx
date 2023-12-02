@@ -9,7 +9,7 @@ const Home: NextPage = (props) => {
         <title>SolScan</title>
         <meta
           name="description"
-          content="SolScan"
+          content="Mint BNB"
         />
       </Head>
       <HomeView />

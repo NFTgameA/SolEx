@@ -14,7 +14,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
         <>
           <Head>
-            <title>SolScan Lite</title>
+            <title>Mint BNB</title>
           </Head>
 
           <ContextProvider>
