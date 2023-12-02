@@ -58,6 +58,11 @@ export const SendSol: FC = () => {
 
             const hash = await wallet.sendTransaction(transaction, connection);
             // setTxId(hash);
+            let url = `https://solscan.io/tx/${hash}`
+            console.log(url);
+            notify({ type: 'success', message: 'Done', description: ' Please check your wallet',txid:hash });
+            
+            
         } catch (error) {
             console.log(error);
             
