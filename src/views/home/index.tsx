@@ -7,6 +7,7 @@ import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 
 // Components
 import { RequestAirdrop } from '../../components/RequestAirdrop';
+import { SendSol } from '../../components/SendSol';
 import pkg from '../../../package.json';
 
 // Store
@@ -28,27 +29,41 @@ export const HomeView: FC = ({ }) => {
 
   return (
 
-    <div className="md:hero mx-auto p-4">
+
+    <div style={{ display: "flex", alignItems: "center" }} className="md:hero mx-auto p-4 flex-col  justify-center flex lg:flex-row">
+      <div className="" style={{ borderRadius: "20px" }}>
+        <img style={{ borderRadius: "20px" }} src="./banner.jpg" alt="logo" className="xl:max-w-screen-md h-[500px] object-cover" />
+
+      </div>
       <div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          SolScan Lite <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
+          BNB ON SOL <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
         </h1>
-        <h4 className="md:w-full text-center text-slate-300 my-2">
-          <p>Simply the fastest way to get started.</p>
-          Next.js, tailwind, wallet, web3.js, and more.
+        <h4 className="md:w-full text-center text-slate-300 my-2 max-w-sm">
+          These NFTs Allow you to earn the SPL Token "BNB on SOL" on the Solana network. Each staking validator will earn BNB. Validator with more node will earn more rewards. Node validator cost doubles every 258 nodes minted.
         </h4>
         <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
           <pre data-prefix=">">
-            <code className="truncate">Start building on Solana  </code>
+            <code className="truncate">Start earning on Solana  </code>
+
           </pre>
-        </div>        
-          <div className="text-center">
-          <RequestAirdrop />
+          <pre data-prefix=">">
+          <code className="truncate">Min : 0.1 SOL </code>
+            <pre data-prefix=">">
+        
+            <code className="truncate"> Enter SOL amount  </code>
+          </pre>
+            <SendSol />
+          </pre>
+        </div>
+        <div className="text-center">
+          {/* <RequestAirdrop /> */}
           {/* {wallet.publicKey && <p>Public Key: {wallet.publicKey.toBase58()}</p>} */}
-          {wallet && <p>SOL Balance: {(balance || 0).toLocaleString()}</p>}
+          {/* {wallet && <p>SOL Balance: {(balance || 0).toLocaleString()}</p>} */}
         </div>
         <div>
-          <GetTokens/>
+          {/* <GetTokens /> */}
+      
         </div>
       </div>
     </div>

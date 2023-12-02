@@ -22,11 +22,11 @@ export const ContentContainer: FC = props => {
               <a>Home</a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/explorer">
               <a>Explorer</a>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="https://t.me/solscanorg">
               <a>Telegram</a>

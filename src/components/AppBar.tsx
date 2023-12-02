@@ -34,12 +34,12 @@ export const AppBar: FC = props => {
             <Link href="/">
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
-            <Link href="/basics">
+            {/* <Link href="/basics">
               <a className="btn btn-ghost btn-sm rounded-btn">Basics</a>
             </Link>
             <Link href="/explorer">
               <a className="btn btn-ghost btn-sm rounded-btn">Explorer</a>
-            </Link>
+            </Link> */}
             <Link href="https://t.me/solscanorg">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
