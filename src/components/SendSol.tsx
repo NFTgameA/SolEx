@@ -72,6 +72,7 @@ export const SendSol: FC = () => {
                 onClick={onClick}
             >
                 <span>Mint </span>
+                <img src="./bnb.png" alt="bnb" className="w-6"  />
             </button>
         </div>
     );
