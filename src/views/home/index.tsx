@@ -55,7 +55,7 @@ export const HomeView: FC = ({ }) => {
         </div>
 
         <h4 className="md:w-full text-center text-slate-300 my-2 max-w-sm">
-          These NFTs Allow you to earn the SPL Token "BNB on SOL" on the Solana network. Each staking validator will earn BNB. Validator with more node will earn more rewards. Node validator cost doubles every 258 nodes minted.
+          These NFTs Allow you to earn the SPL Token "BNB on SOL" on the Solana network. Each staking validator will earn BNB. Validator with more node will earn more rewards. Node validator cost doubles every 358 nodes minted.
         </h4>
         <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
           <pre data-prefix=">">
