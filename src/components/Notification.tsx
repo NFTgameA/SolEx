@@ -57,7 +57,7 @@ const Notification = ({ type, message, description, txid, onHide }) => {
   useEffect(() => {
     const id = setTimeout(() => {
       onHide()
-    }, 118000);
+    }, 3000);
 
     return () => {
       clearInterval(id);

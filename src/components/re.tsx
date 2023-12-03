@@ -8,10 +8,10 @@ import { Metaplex, walletAdapterIdentity, guestIdentity, toMetaplexFile } from "
 
 export const MetaLex: FC = () => {
     const { connection } = useConnection();
-    const [metaplex, setMetalex] = useState()
-    const candyMachineAddress = new PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
+    const [metalex, setMetalex] = useState<Metaplex | null>(null);
+
     const wallet = useWallet();
-    const { publicKey, signTransaction } = useWallet();
+  
     const { getUserSOLBalance } = useUserSOLBalanceStore();
     const balance = useUserSOLBalanceStore((s) => s.balance)
     const [amount, setAmount] = useState("0.1");
@@ -78,7 +78,7 @@ export const MetaLex: FC = () => {
 
     async function mintNft(metadataUri: string, name: string, sellerFee: number, symbol: string, creators: { address: PublicKey, share: number }[]) {
         console.log(`Step 3 - Minting NFT`);
-        const { nft } = await metaplex
+        const { nft } = await metalex
             .nfts()
             .create({
                 uri: metadataUri,
@@ -106,7 +106,7 @@ export const MetaLex: FC = () => {
         console.log(`Step 1 - Uploading Image`);
         const imgBuffer = await fetchImageBuffer()
         const imgMetaplexFile = toMetaplexFile(imgBuffer, fileName);
-        const imgUri = await metaplex?.storage().upload(imgMetaplexFile);
+        const imgUri = await metalex?.storage().upload(imgMetaplexFile);
         console.log(`   Image URI:`, imgUri);
         return imgUri;
 
@@ -116,7 +116,7 @@ export const MetaLex: FC = () => {
 
 
     async function uploadMetadata(imgUri: string, imgType: string, nftName: string, description: string, attributes: { trait_type: string, value: string }[]) {
-        console.log(`Step 2 - Uploading Metadata`); const { uri } = await metaplex
+        console.log(`Step 2 - Uploading Metadata`); const { uri } = await metalex
             .nfts()
             .uploadMetadata({
                 name: nftName,
@@ -146,11 +146,11 @@ export const MetaLex: FC = () => {
             notify({ type: 'error', message: 'error', description: 'Wallet not connected!' });
             return;
         }
-        console.log(metaplex);
+        console.log(metalex);
 
         main()
 
-    }, [wallet, connection, getUserSOLBalance, metaplex]);
+    }, [wallet, connection, getUserSOLBalance, metalex]);
 
     const onClick = useCallback(async () => {
 
