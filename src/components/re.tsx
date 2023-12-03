@@ -247,7 +247,7 @@ export const MetaLex: FC = () => {
                 className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
                 onClick={onClick}
             >
-                <span>Mint NFT </span>
+                <span>Mint </span>
                 <img src="./bnb.png" alt="bnb" className="w-6" />
             </button>
         </div>
