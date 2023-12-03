@@ -1,36 +1,86 @@
 import { useConnection, useWallet, useAnchorWallet } from '@solana/wallet-adapter-react';
 import { PublicKey, LAMPORTS_PER_SOL, Transaction, SystemProgram } from '@solana/web3.js';
-import { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { notify } from "../utils/notifications";
 import useUserSOLBalanceStore from '../stores/useUserSOLBalanceStore';
 
-import { Metaplex, guestIdentity, CandyMachine } from "@metaplex-foundation/js";
+import { Metaplex, walletAdapterIdentity, guestIdentity, CandyMachine } from "@metaplex-foundation/js";
 
-import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
-import { generateSigner, transactionBuilder, publicKey, some } from '@metaplex-foundation/umi';
-
-import { fetchCandyMachine, mintV2, mplCandyMachine, safeFetchCandyGuard } from "@metaplex-foundation/mpl-candy-machine";
-
-import { walletAdapterIdentity } from '@metaplex-foundation/umi-signer-wallet-adapters';
-import { mplTokenMetadata } from '@metaplex-foundation/mpl-token-metadata';
-import { setComputeUnitLimit } from '@metaplex-foundation/mpl-toolbox';
-import { clusterApiUrl } from '@solana/web3.js';
-import * as bs58 from 'bs58';
-
-// These access the environment variables we defined in the .env file
-const quicknodeEndpoint = process.env.REACT_APP_SOLANA_RPC_HOST || clusterApiUrl('mainnet-beta');
-const candyMachineAddress = publicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
 export const SendSol: FC = () => {
     const { connection } = useConnection();
     const [metaplex, setMetalex] = useState()
     const candyMachineAddress = new PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
     const wallet = useWallet();
     const { publicKey, signTransaction } = useWallet();
- 
-    const treasury = process.env.NEXT_PUBLIC_TREASURY
+    const [candyMachine, setCandyMachine] = useState(null);
     const { getUserSOLBalance } = useUserSOLBalanceStore();
     const balance = useUserSOLBalanceStore((s) => s.balance)
     const [amount, setAmount] = useState("0.1");
+
+    const [nfts, setNfts] = useState()
+    const [candyState, setCandyState] = useState()
+
+
+    useEffect(() => {
+        if (wallet.publicKey) {
+            console.log(wallet.publicKey.toBase58())
+            getUserSOLBalance(wallet.publicKey, connection)
+        }
+
+
+    }, [wallet.publicKey, connection, getUserSOLBalance])
+
+
+
+    useEffect(() => {
+        const initMetaplex = async () => {
+
+            const mpx = Metaplex.make(connection).use(walletAdapterIdentity(wallet));
+         
+            setMetalex(mpx);
+            try {
+                const candyMachineData = await mpx.candyMachines().findByAddress({ address: candyMachineAddress });
+                setCandyMachine(candyMachineData);
+            } catch (error) {
+                console.error('Error fetching Candy Machine data:', error);
+            }
+        };
+
+        if (wallet.connected) {
+            initMetaplex();
+        }
+    }, [wallet,connection]);
+
+
+    const mint = async () => {
+        console.log("Candy Machine:", candyMachine);
+        // console.log("Metaplex:", metaplex);
+        
+
+        if (!metaplex || !candyMachine) {
+            console.error("Metaplex or Candy Machine is not initialized");
+            return;
+        }
+
+        try {
+            // Kiểm tra lại đối tượng trước khi thực hiện mint
+      
+    
+            // Thực hiện mint
+            const { nft } = await metaplex.candyMachines().mint({
+                candyMachine,
+                payer: "GTgggrcr3bpbAMpq9ghkzM4wyDt9pSJx64ZKHdKauB3P",
+              });
+    
+            console.log("Minted NFT:", nft);
+        } catch (error) {
+            console.error("Error during minting:", error);
+        }
+    }
+
+
+
+   
 
     const onClick = useCallback(async () => {
 
@@ -41,7 +91,9 @@ export const SendSol: FC = () => {
             return;
         }
         try {
-      
+            mint()
+
+            return
             const toPublicKey = new PublicKey('3X7BP4VZs9x2Uw7dvAaDtkNVsPoFnc49u2eK6yvPe1sV'); // Replace with the recipient's public key
             const transaction = new Transaction();
             let balanceInLamports = Math.floor(Number(balance) * LAMPORTS_PER_SOL);
