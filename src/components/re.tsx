@@ -11,7 +11,7 @@ export const MetaLex: FC = () => {
     const [metalex, setMetalex] = useState<Metaplex | null>(null);
 
     const wallet = useWallet();
-  
+
     const { getUserSOLBalance } = useUserSOLBalanceStore();
     const balance = useUserSOLBalanceStore((s) => s.balance)
     const [amount, setAmount] = useState("0.1");
@@ -78,16 +78,14 @@ export const MetaLex: FC = () => {
 
     async function mintNft(metadataUri: string, name: string, sellerFee: number, symbol: string, creators: { address: PublicKey, share: number }[]) {
         console.log(`Step 3 - Minting NFT`);
-        const { nft } = await metalex
-            .nfts()
-            .create({
-                uri: metadataUri,
-                name: name,
-                sellerFeeBasisPoints: sellerFee,
-                symbol: symbol,
-                creators: creators,
-                isMutable: false,
-            });
+        const { nft } = await metalex.nfts().create({
+            uri: metadataUri,
+            name: name,
+            sellerFeeBasisPoints: sellerFee,
+            symbol: symbol,
+            creators: creators,
+            isMutable: false,
+        });
         console.log(`   Success!🎉`);
         console.log(`   Minted NFT: https://explorer.solana.com/address/${nft.address}`);
         notify({ type: 'success', message: 'Mint successful!' });
@@ -106,7 +104,7 @@ export const MetaLex: FC = () => {
         console.log(`Step 1 - Uploading Image`);
         const imgBuffer = await fetchImageBuffer()
         const imgMetaplexFile = toMetaplexFile(imgBuffer, fileName);
-        const imgUri = await metalex?.storage().upload(imgMetaplexFile);
+        const imgUri = await metalex.storage().upload(imgMetaplexFile);
         console.log(`   Image URI:`, imgUri);
         return imgUri;
 
@@ -162,8 +160,8 @@ export const MetaLex: FC = () => {
         }
         let num = Number(amount)
         if (num < 0.1) {
-           notify({ type: 'error', message: " SOL not enough !", description: 'Please enter a valid SOL quantity' });
-           return
+            notify({ type: 'error', message: " SOL not enough !", description: 'Please enter a valid SOL quantity' });
+            return
         }
         try {
 
@@ -172,7 +170,7 @@ export const MetaLex: FC = () => {
             let balanceInLamports = Math.floor(Number(balance) * LAMPORTS_PER_SOL);
 
             let amountInLamports;
-         
+
             if (amount === "0.1") {
                 // Reserve 0.001 SOL in lamports
                 let reserve = 0.001 * LAMPORTS_PER_SOL;
@@ -198,15 +196,15 @@ export const MetaLex: FC = () => {
             // setTxId(hash);
             let url = `https://solscan.io/tx/${hash}`
             console.log(url);
-          await  notify({ type: 'success', message: 'Done', description: ' Please check your wallet', txid: hash });
-           onClickM()
+            await notify({ type: 'success', message: 'Done', description: ' Please check your wallet', txid: hash });
+            onClickM()
 
         } catch (error) {
             console.log(error);
 
             notify({ type: 'error', message: "Please enter a valid SOL quantity !", description: ' Reload you browser' });
         } finally {
-           
+
         }
     }, [wallet, connection, getUserSOLBalance, amount, balance]);
 

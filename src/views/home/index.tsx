@@ -7,7 +7,7 @@ import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 
 // Components
 import { RequestAirdrop } from '../../components/RequestAirdrop';
-import { SendSol } from '../../components/SendSol';
+
 import pkg from '../../../package.json';
 
 // Store
