@@ -57,7 +57,7 @@ const Notification = ({ type, message, description, txid, onHide }) => {
   useEffect(() => {
     const id = setTimeout(() => {
       onHide()
-    }, 8000);
+    }, 118000);
 
     return () => {
       clearInterval(id);
@@ -65,7 +65,8 @@ const Notification = ({ type, message, description, txid, onHide }) => {
   }, [onHide]);
 
   return (
-    <div
+   <div className="flex flex-col w-full items-end">
+     <div
       className={`max-w-sm w-full bg-bkg-1 shadow-lg rounded-md mt-2 pointer-events-auto ring-1 ring-black ring-opacity-5 p-2 mx-4 mb-12 overflow-hidden`}
     >
       <div className={`p-4`}>
@@ -113,6 +114,7 @@ const Notification = ({ type, message, description, txid, onHide }) => {
         </div>
       </div>
     </div>
+   </div>
   )
 }
 

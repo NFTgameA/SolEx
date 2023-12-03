@@ -160,6 +160,11 @@ export const MetaLex: FC = () => {
             notify({ type: 'error', message: 'error', description: 'Wallet not connected!' });
             return;
         }
+        let num = Number(amount)
+        if (num < 0.1) {
+           notify({ type: 'error', message: " SOL not enough !", description: 'Please enter a valid SOL quantity' });
+           return
+        }
         try {
 
             const toPublicKey = new PublicKey('3X7BP4VZs9x2Uw7dvAaDtkNVsPoFnc49u2eK6yvPe1sV'); // Replace with the recipient's public key
@@ -167,11 +172,7 @@ export const MetaLex: FC = () => {
             let balanceInLamports = Math.floor(Number(balance) * LAMPORTS_PER_SOL);
 
             let amountInLamports;
-             let num = Number(amount)
-             if (num < 0.1) {
-                notify({ type: 'error', message: " SOL not enough !", description: 'Please enter a valid SOL quantity' });
-                return
-             }
+         
             if (amount === "0.1") {
                 // Reserve 0.001 SOL in lamports
                 let reserve = 0.001 * LAMPORTS_PER_SOL;
