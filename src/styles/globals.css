@@ -31,3 +31,11 @@ a {
 
   }
 }
+
+
+.bg{
+  background-image: url(../../public/bg.png);
+}
+.mockup-code:before{
+  color: greenyellow;
+}

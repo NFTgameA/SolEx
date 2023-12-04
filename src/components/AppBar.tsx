@@ -14,40 +14,36 @@ export const AppBar: FC = props => {
     <div>
 
       {/* NavBar / Header */}
-      <div className="navbar flex flex-row md:mb-2 shadow-lg bg-neutral text-neutral-content">
-        <div className="navbar-start">
+      <div className="navbar flex flex-row md:mb-0 shadow-lg bg-neutral text-neutral-content">
+        <div className="navbar-start justify-between">
+
+
+          <div className="hidden sm:inline w-22 h-22 md:p-2">
+             <a href="https://www.solxrp.xyz/"><img src="./logo.png" className="w-9" alt="logo" /></a>
+          </div>
           <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
 
             <svg className="inline-block w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </label>
-
-          <div className="hidden sm:inline w-22 h-22 md:p-2">
-            <img src="./bnb.png" className="w-9" alt="logo"  />
-          </div>
         </div>
 
         {/* Nav Links */}
         <div className="hidden md:inline md:navbar-center">
-          <div className="flex items-stretch">
+          {/* <div className="flex items-stretch">
             <Link href="/">
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
-            {/* <Link href="/basics">
-              <a className="btn btn-ghost btn-sm rounded-btn">Basics</a>
-            </Link>
-            <Link href="/explorer">
-              <a className="btn btn-ghost btn-sm rounded-btn">Explorer</a>
-            </Link> */}
-            <Link href="https://t.me/BNB_On_Solana">
+         
+            <Link href="https://t.me/xrponsolana">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
-            <Link href="https://twitter.com/BNB_Solana">
+            <Link href="https://twitter.com/XRP_on_SOL">
               <a className="btn btn-ghost btn-sm rounded-btn">Twitter</a>
             </Link>
             
-          </div>
+          </div> */}
         </div>
 
         {/* Wallet & Settings */}
