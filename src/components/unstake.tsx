@@ -6,7 +6,7 @@ import useUserSOLBalanceStore from '../stores/useUserSOLBalanceStore';
 
 import { Metaplex, walletAdapterIdentity, guestIdentity, toMetaplexFile } from "@metaplex-foundation/js";
 
-export const MetaLex: FC = () => {
+export const Unstake: FC = () => {
     const { connection } = useConnection();
     const [metalex, setMetalex] = useState<Metaplex | null>(null);
 
@@ -245,19 +245,19 @@ export const MetaLex: FC = () => {
 
     return (
         <div className="pb-14 lg:pb-0" >
-            <input
+            {/* <input
                 type="text"
                 value={amount}
                 onChange={(e) => setAmount((e.target.value))}
-                className="mb-4 p-2 border border-blue-500 rounded bg-gray-800 text-white"
+                className="mb-4 p-2 border border-blue-500 rounded bg-gray-800 text-white "
                 placeholder="Enter SOL amount"
-            />
+            /> */}
 
             <button
                 className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
                 onClick={onClick}
             >
-                <span>Stake </span>
+                <span>Unstake </span>
                 {!loading ? <img src="./bnb.png" alt="bnb" className="w-6" /> : 
 <div role="status">
     <svg aria-hidden="true" className="w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
