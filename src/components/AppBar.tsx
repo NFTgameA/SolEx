@@ -36,7 +36,7 @@ export const AppBar: FC = props => {
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
          
-            <Link href="https://t.me/XRP_Solana">
+            <Link href="https://t.me/XRPonSolana">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
             <Link href="https://twitter.com/XRP_on_SOL">
