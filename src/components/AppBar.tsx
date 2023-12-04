@@ -40,7 +40,7 @@ export const AppBar: FC = props => {
             <Link href="/explorer">
               <a className="btn btn-ghost btn-sm rounded-btn">Explorer</a>
             </Link> */}
-            <Link href="https://t.me/BNB_Solana">
+            <Link href="https://t.me/BNB_On_Solana">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
             <Link href="https://twitter.com/BNB_Solana">
