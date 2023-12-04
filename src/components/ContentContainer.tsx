@@ -38,6 +38,12 @@ export const ContentContainer: FC = props => {
             </Link>
           </li>
 
+          <li>
+            <Link href="https://docs.solxrp.xyz/">
+              <a>Docs</a>
+            </Link>
+          </li>
+
           
        
         </ul>

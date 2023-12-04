@@ -9,7 +9,7 @@ const Home: NextPage = (props) => {
         <title>Mint XRP on SOL</title>
         <meta
           name="description"
-          content="Mint BNB"
+          content="Mint XRP"
         />
       </Head>
       <HomeView />

@@ -43,14 +43,14 @@ export const MetaLex: FC = () => {
         imgFileName: 'image.png',
         imgType: 'image/png',
         imgName: 'XRP on SOL',
-        description: 'As a holder of this BNB NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
+        description: 'As a holder of this XRP NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
         attributes: [
             { trait_type: 'Speed', value: 'Quick' },
             { trait_type: 'Type', value: 'Pixelated' },
-            { trait_type: 'Background', value: 'BNB Blue' }
+            { trait_type: 'Background', value: 'XRP Blue' }
         ],
         sellerFeeBasisPoints: 1,//500 bp = 5%
-        symbol: 'BNBNFT',
+        symbol: 'XRPNFT',
         creators: [
             { address: wallet.publicKey, share: 100 }
         ]

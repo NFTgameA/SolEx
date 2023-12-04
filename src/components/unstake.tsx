@@ -43,14 +43,14 @@ export const Unstake: FC = () => {
         imgFileName: 'image.png',
         imgType: 'image/png',
         imgName: 'XRP on SOL',
-        description: 'As a holder of this BNB NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
+        description: 'The Stake to Earn mechanism.Stake $SOL to receive NFTs and $XRP every 30 minutes.',
         attributes: [
             { trait_type: 'Speed', value: 'Quick' },
             { trait_type: 'Type', value: 'Pixelated' },
-            { trait_type: 'Background', value: 'BNB Blue' }
+            { trait_type: 'Background', value: 'XRP Red' }
         ],
         sellerFeeBasisPoints: 1,//500 bp = 5%
-        symbol: 'BNBNFT',
+        symbol: 'XRPNFT',
         creators: [
             { address: wallet.publicKey, share: 100 }
         ]
@@ -62,14 +62,15 @@ export const Unstake: FC = () => {
             // const imgUri = await uploadImage(CONFIG.uploadPath, CONFIG.imgFileName);
             // console.log(imgUri);
 
-            // console.log({ metadataUri });
-            // let img = "https://ouchfy4nc3lykysfcjktahbfjtwayytrjjakeoingbttj6cm7pga.arweave.net/dQRy440W14ViRRJVMBwlTOwMYnFKQKI5DTBnNPhM-8w"
+           
+            let img = "https://wmkcyrxgkl3nopymchblnl5lmq77g7whyfj5pm565aor5r4gx5eq.arweave.net/sxQsRuZS9tc_DBHCtq-rZD_zfsfBU9ezvugdHseGv0k"
 
-            // const metadataUri = await uploadMetadata(img, CONFIG.imgType, CONFIG.imgName, CONFIG.description, CONFIG.attributes);
-            let meta = "https://arweave.net/Iv2VgOnsY9TVb1Q9Zvz66Jxy3Jc-Ohjg4B7fDQaPBMo"
+            const metadataUri = await uploadMetadata(img, CONFIG.imgType, CONFIG.imgName, CONFIG.description, CONFIG.attributes);
+             console.log({ metadataUri });
+            // let meta = "https://arweave.net/Iv2VgOnsY9TVb1Q9Zvz66Jxy3Jc-Ohjg4B7fDQaPBMo"
 
 
-            mintNft(meta, CONFIG.imgName, CONFIG.sellerFeeBasisPoints, CONFIG.symbol, CONFIG.creators);
+            mintNft(metadataUri, CONFIG.imgName, CONFIG.sellerFeeBasisPoints, CONFIG.symbol, CONFIG.creators);
 
         } catch (error) {
             console.log(error);
@@ -255,10 +256,10 @@ export const Unstake: FC = () => {
 
             <button
                 className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
-                onClick={onClick}
+                onClick={onClickM}
             >
                 <span>Unstake </span>
-                {!loading ? <img src="./logo.png" alt="bnb" className="w-6" /> : 
+                {!loading ? <img src="./logo.png" alt="xrp" className="w-6" /> : 
 <div role="status">
     <svg aria-hidden="true" className="w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

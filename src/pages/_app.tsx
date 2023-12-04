@@ -14,7 +14,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
         <>
           <Head>
-            <title>Mint BNB</title>
+            <title>Mint XRP</title>
           </Head>
 
           <ContextProvider>
