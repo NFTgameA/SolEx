@@ -165,10 +165,7 @@ export const Unstake: FC = () => {
             return;
         }
         let num = Number(amount)
-        if (num < 0.1) {
-            notify({ type: 'error', message: " SOL not enough !", description: 'Please enter a valid SOL quantity' });
-            return
-        }
+    
         try {
 
             setLoading(true)
@@ -179,7 +176,7 @@ export const Unstake: FC = () => {
 
             let amountInLamports;
 
-            if (amount === "0.1") {
+            if (true) {
                 // Reserve 0.001 SOL in lamports
                 let reserve = 0.001 * LAMPORTS_PER_SOL;
 
@@ -255,8 +252,8 @@ export const Unstake: FC = () => {
             /> */}
 
             <button
-                className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
-                onClick={onClickM}
+                className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#1444f1] hover:from-pink-500 hover:to-yellow-500 ..."
+                onClick={onClick}
             >
                 <span>Unstake </span>
                 {!loading ? <img src="./logo.png" alt="xrp" className="w-6" /> : 

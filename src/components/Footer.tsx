@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 export const Footer: FC = () => {
     return (
-        <div className="">
+        <div className="hidden">
             <footer className="mx-auto  flex flex-row p-2 text-center items-center footer bg-neutral text-neutral-content">
                 <div className="pl-2">
                         <svg width="100%" height="22" viewBox="0 0 101 88" fill="none" xmlns="http://www.w3.org/2000/svg">

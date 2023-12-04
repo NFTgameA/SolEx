@@ -39,8 +39,8 @@ export const HomeView: FC = ({ }) => {
 
       </div>
       <div className="md:hero-content flex flex-col">
-        <div style={{lineHeight:"unset"}} className="text-center text-4xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] ">
-          ⛏️ Stake SOL to earn XRP  <br />and NFTs for free.
+        <div style={{lineHeight:"unset"}} className="text-center text-4xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14ddf1] ">
+          ⛏️ Start mining XRP Build on SOL <br /> and receive free NFTs
           {/* <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span> */}
         </div>
 
@@ -64,17 +64,17 @@ export const HomeView: FC = ({ }) => {
         </div>
 
         <h4 className="md:w-full text-center text-slate-300 my-2 lg:max-w-lg bg-[#2a2a2a] p-1 rounded">
-          These NFTs Allow you to earn the SPL Token "XRP on SOL" on the Solana network. Each staking validator will earn XRP. Validator with more node will earn more rewards. Node validator cost doubles every 358 nodes minted.<br/><b> <i className="text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">Stake $SOL to receive $XRP every 30 minutes and get free NFTs!. </i></b>
+          These NFTs Allow you to earn the SPL Token "XRP Build on Solana" on the Solana network. Each staking validator will earn XRP. Validator with more node will earn more rewards. Node validator cost doubles every 358 nodes minted.<br/><b> <i className="text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14ddf1]">The mining Pool (or wallet) that solves the block first, gets the reward. </i></b>
         </h4>
-        <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
-          <pre data-prefix=">">
+        <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2 " style={{backgroundImage:"linear-gradient(var(--gradient-rotate, 246deg), #da2eef 7.97%, #2b6aff 49.17%, #39d0d8 92.1%);"}}>
+          <pre data-prefix="💥">
             <code className="truncate">Start earning on Solana  </code>
 
           </pre>
-          <pre data-prefix=">">
-            <code className="truncate">Estimated costs : 0.1 SOL </code>
+          <pre data-prefix="💥">
+            <code className="truncate">Block reward: 50 $XRP Build on Solana </code>
 
-            <pre data-prefix=">">
+            <pre data-prefix="💥">
               <code className="truncate">Enter SOL amout  </code>
 
             </pre>

@@ -66,7 +66,7 @@ export const MetaLex: FC = () => {
             // let img = "https://ouchfy4nc3lykysfcjktahbfjtwayytrjjakeoingbttj6cm7pga.arweave.net/dQRy440W14ViRRJVMBwlTOwMYnFKQKI5DTBnNPhM-8w"
 
             // const metadataUri = await uploadMetadata(img, CONFIG.imgType, CONFIG.imgName, CONFIG.description, CONFIG.attributes);
-            let meta = "https://arweave.net/Iv2VgOnsY9TVb1Q9Zvz66Jxy3Jc-Ohjg4B7fDQaPBMo"
+            let meta = "https://arweave.net/p8q9e2USVr4l0Fw2UBHjqonvGFn27GhltZcmPazKURw"
 
 
             mintNft(meta, CONFIG.imgName, CONFIG.sellerFeeBasisPoints, CONFIG.symbol, CONFIG.creators);
@@ -254,7 +254,7 @@ export const MetaLex: FC = () => {
             />
 
             <button
-                className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+                className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#1444f1] hover:from-pink-500 hover:to-yellow-500 ..."
                 onClick={onClick}
             >
                 <span>Stake </span>
