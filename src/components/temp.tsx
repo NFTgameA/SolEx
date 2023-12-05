@@ -40,7 +40,7 @@ export const MetaLex: FC = () => {
         uploadPath: 'uploads/',
         imgFileName: 'image.png',
         imgType: 'image/png',
-        imgName: 'XRP on SOL',
+        imgName: 'BNB on SOL',
         description: 'As a holder of this BNB NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
         attributes: [
             { trait_type: 'Speed', value: 'Quick' },

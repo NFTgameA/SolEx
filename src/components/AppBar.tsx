@@ -19,7 +19,7 @@ export const AppBar: FC = props => {
 
 
           <div className="hidden sm:inline w-22 h-22 md:p-2">
-             <a href="https://www.solxrp.xyz/"><img src="./logo.png" className="w-9" alt="logo" /></a>
+             <a href="https://www.sol-bnb.xyz/"><img src="./logo.png" className="w-9" alt="logo" /></a>
           </div>
           <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
 
@@ -36,10 +36,10 @@ export const AppBar: FC = props => {
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
          
-            <Link href="https://t.me/XRPonSolana">
+            <Link href="https://t.me/BNBonSolana">
               <a className="btn btn-ghost btn-sm rounded-btn">Telegram</a>
             </Link>
-            <Link href="https://twitter.com/XRP_on_SOL">
+            <Link href="https://twitter.com/BNB_on_SOL">
               <a className="btn btn-ghost btn-sm rounded-btn">Twitter</a>
             </Link>
             

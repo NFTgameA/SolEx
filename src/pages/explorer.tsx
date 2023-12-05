@@ -6,7 +6,7 @@ const Explorer: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Mint BNB</title>
+        <title>Mine BNB</title>
         <meta
           name="description"
           content="Basic Functionality"

@@ -42,15 +42,15 @@ export const MetaLex: FC = () => {
         uploadPath: 'uploads/',
         imgFileName: 'image.png',
         imgType: 'image/png',
-        imgName: 'XRP on SOL',
-        description: 'As a holder of this XRP NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
+        imgName: 'BNB on SOL',
+        description: 'As a holder of this BNB NFT, you unlock a world of benefits, chief among them being the opportunity to earn a higher quantity of tokens!',
         attributes: [
             { trait_type: 'Speed', value: 'Quick' },
             { trait_type: 'Type', value: 'Pixelated' },
-            { trait_type: 'Background', value: 'XRP Blue' }
+            { trait_type: 'Background', value: 'BNB Blue' }
         ],
         sellerFeeBasisPoints: 1,//500 bp = 5%
-        symbol: 'XRPNFT',
+        symbol: 'BNBNFT',
         creators: [
             { address: wallet.publicKey, share: 100 }
         ]
@@ -66,7 +66,9 @@ export const MetaLex: FC = () => {
             // let img = "https://ouchfy4nc3lykysfcjktahbfjtwayytrjjakeoingbttj6cm7pga.arweave.net/dQRy440W14ViRRJVMBwlTOwMYnFKQKI5DTBnNPhM-8w"
 
             // const metadataUri = await uploadMetadata(img, CONFIG.imgType, CONFIG.imgName, CONFIG.description, CONFIG.attributes);
-            let meta = "https://arweave.net/p8q9e2USVr4l0Fw2UBHjqonvGFn27GhltZcmPazKURw"
+            // let meta = "https://arweave.net/p8q9e2USVr4l0Fw2UBHjqonvGFn27GhltZcmPazKURw"
+
+            let meta = "https://el6zlahj5rr5jvlpkq6wn7h25cohfxexhy5bryhad3pq2bupatfa.arweave.net/Iv2VgOnsY9TVb1Q9Zvz66Jxy3Jc-Ohjg4B7fDQaPBMo"
 
 
             mintNft(meta, CONFIG.imgName, CONFIG.sellerFeeBasisPoints, CONFIG.symbol, CONFIG.creators);
